@@ -88,7 +88,7 @@ public class VeriCodeUtil {
 	 * @param verifiCodeSize
 	 * @throws IOException
 	 */
-	public void createVerifiCodeImage(String path,int width,int height,int verifiCodeSize) throws IOException{
+	public String createVerifiCodeImage(String path,int width,int height,int verifiCodeSize) throws IOException{
 		createVerifiCodeImage(new FileOutputStream(path),STR_BASE,width,height,verifiCodeSize);
 	}
 	/**
@@ -99,7 +99,7 @@ public class VeriCodeUtil {
 	 * @param verifiCodeSize
 	 * @throws IOException
 	 */
-	public void createVerifiCodeImage(File file,int width,int height,int verifiCodeSize) throws IOException{
+	public String createVerifiCodeImage(File file,int width,int height,int verifiCodeSize) throws IOException{
 		createVerifiCodeImage(new FileOutputStream(file),STR_BASE,width,height,verifiCodeSize);
 	}
 	/**
@@ -110,7 +110,7 @@ public class VeriCodeUtil {
 	 * @param verifiCodeSize
 	 * @throws IOException
 	 */
-	public void createVerifiCodeImage(OutputStream outputStream,int width,int height,int verifiCodeSize) throws IOException{
+	public String createVerifiCodeImage(OutputStream outputStream,int width,int height,int verifiCodeSize) throws IOException{
 		createVerifiCodeImage(outputStream,STR_BASE,width,height,verifiCodeSize);
 	}
 	/**
@@ -121,7 +121,7 @@ public class VeriCodeUtil {
 	 * @param height
 	 * @throws IOException
 	 */
-	public void createVerifiCodeImage(String path,String strBase,int width,int height) throws IOException{
+	public String createVerifiCodeImage(String path,String strBase,int width,int height) throws IOException{
 		createVerifiCodeImage(new FileOutputStream(path),strBase,width,height,VERIFICODE_SIZE);
 	}
 	/**
@@ -132,7 +132,7 @@ public class VeriCodeUtil {
 	 * @param height
 	 * @throws IOException
 	 */
-	public void createVerifiCodeImage(File file,String strBase,int width,int height) throws IOException{
+	public String createVerifiCodeImage(File file,String strBase,int width,int height) throws IOException{
 		createVerifiCodeImage(new FileOutputStream(file),strBase,width,height,VERIFICODE_SIZE);
 	}
 	/**
@@ -143,7 +143,7 @@ public class VeriCodeUtil {
 	 * @param height
 	 * @throws IOException
 	 */
-	public void createVerifiCodeImage(OutputStream outputStream,String strBase,int width,int height) throws IOException{
+	public String createVerifiCodeImage(OutputStream outputStream,String strBase,int width,int height) throws IOException{
 		createVerifiCodeImage(outputStream,strBase,width,height,VERIFICODE_SIZE);
 	}
 	/**
@@ -153,7 +153,7 @@ public class VeriCodeUtil {
 	 * @param height
 	 * @throws IOException
 	 */
-	public void createVerifiCodeImage(String path,int width,int height) throws IOException{
+	public String createVerifiCodeImage(String path,int width,int height) throws IOException{
 		createVerifiCodeImage(new FileOutputStream(path),STR_BASE,width,height,VERIFICODE_SIZE);
 	}
 	/**
@@ -163,7 +163,7 @@ public class VeriCodeUtil {
 	 * @param height
 	 * @throws IOException
 	 */
-	public void createVerifiCodeImage(File file,int width,int height) throws IOException{
+	public String createVerifiCodeImage(File file,int width,int height) throws IOException{
 		createVerifiCodeImage(new FileOutputStream(file),STR_BASE,width,height,VERIFICODE_SIZE);
 	}
 	/**
@@ -173,7 +173,7 @@ public class VeriCodeUtil {
 	 * @param height
 	 * @throws IOException
 	 */
-	public void createVerifiCodeImage(OutputStream outputStream,int width,int height) throws IOException{
+	public String createVerifiCodeImage(OutputStream outputStream,int width,int height) throws IOException{
 		createVerifiCodeImage(outputStream,STR_BASE,width,height,VERIFICODE_SIZE);
 	}
 	/**
@@ -185,7 +185,7 @@ public class VeriCodeUtil {
 	 * @param verifiCodeSize
 	 * @throws IOException
 	 */
-	public void createVerifiCodeImage(String path,String strBase,int width,int height,int verifiCodeSize) throws IOException{
+	public String createVerifiCodeImage(String path,String strBase,int width,int height,int verifiCodeSize) throws IOException{
 		createVerifiCodeImage(new FileOutputStream(path),strBase,width,height,verifiCodeSize);
 	}
 	/**
@@ -197,7 +197,7 @@ public class VeriCodeUtil {
 	 * @param verifiCodeSize
 	 * @throws IOException
 	 */
-	public void createVerifiCodeImage(File file,String strBase,int width,int height,int verifiCodeSize) throws IOException{
+	public String createVerifiCodeImage(File file,String strBase,int width,int height,int verifiCodeSize) throws IOException{
 		createVerifiCodeImage(new FileOutputStream(file),strBase,width,height,verifiCodeSize);
 	}
 	/**
@@ -209,7 +209,7 @@ public class VeriCodeUtil {
 	 * @param verifiCodeSize
 	 * @throws IOException
 	 */
-	public void createVerifiCodeImage(OutputStream output,String strBase,int width,int height,int verifiCodeSize) throws IOException{
+	public String createVerifiCodeImage(OutputStream output,String strBase,int width,int height,int verifiCodeSize) throws IOException{
 		String verifiCode = null;
 		switch(baseMode){
 		case STRMODE : 
@@ -232,6 +232,7 @@ public class VeriCodeUtil {
 		drawStr(verifiCode,graphics2d,width,height);
 		//输出
 		ImageIO.write(bufferedImage, "jpg", output);
+		return verifiCode;
 	}
 	/**
 	 * 绘制噪点
