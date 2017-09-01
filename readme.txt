@@ -1,0 +1,2 @@
+1.在mail.properties文件夹下配置发件人信息
+2.把mail.properties文件放置classspath根目录下
